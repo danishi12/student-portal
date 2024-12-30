@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignments - Student Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">Student Portal</div>
+        <button class="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li><a href="assignments.html" class="active">Assignments</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <h1>Assignments</h1>
+            <p>Track and manage your coursework</p>
+        </section>
+
+        <section class="assignments-container">
+            <div class="assignments-header">
+                <div class="filter-controls">
+                    <select id="subject-filter">
+                        <option value="all">All Subjects</option>
+                        <option value="mathematics">Mathematics</option>
+                        <option value="physics">Physics</option>
+                        <option value="chemistry">Chemistry</option>
+                    </select>
+                    <select id="status-filter">
+                        <option value="all">All Status</option>
+                        <option value="pending">Pending</option>
+                        <option value="completed">Completed</option>
+                        <option value="overdue">Overdue</option>
+                    </select>
+                </div>
+                <button id="add-assignment" class="action-btn">Add Assignment</button>
+            </div>
+
+            <div class="assignments-list" id="assignments-list">
+                <!-- Assignments will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <section class="assignment-stats">
+            <div class="stat-card">
+                <h3>Pending</h3>
+                <p id="pending-count">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Completed</h3>
+                <p id="completed-count">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Overdue</h3>
+                <p id="overdue-count">0</p>
+            </div>
+        </section>
+    </main>
+
+    <div id="assignment-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Add New Assignment</h2>
+            <form id="assignment-form">
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <select id="subject" required>
+                        <option value="mathematics">Mathematics</option>
+                        <option value="physics">Physics</option>
+                        <option value="chemistry">Chemistry</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="title">Assignment Title</label>
+                    <input type="text" id="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="due-date">Due Date</label>
+                    <input type="date" id="due-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="priority">Priority</label>
+                    <select id="priority" required>
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">Add Assignment</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Student Portal. All rights reserved.</p>
+    </footer>
+
+    <script src="assignments.js"></script>
+    <script type="module" src="main.js"></script>
+    <script type="module" src="assignments.js"></script>
+</body>
+</html>

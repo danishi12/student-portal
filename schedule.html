@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule - Student Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">Student Portal</div>
+        <button class="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="schedule.html" class="active">Schedule</a></li>
+            <li><a href="assignments.html">Assignments</a></li>
+        </ul>
+    </nav>
+
+    <main class="schedule">
+        <h1>Schedule</h1>
+        <div class="schedule-container">
+            <section class="hero">
+                <h1>Class Schedule</h1>
+                <p>View and manage your weekly schedule</p>
+            </section>
+
+            <section class="schedule-container">
+                <div class="schedule-controls">
+                    <button id="prev-week" class="action-btn">Previous Week</button>
+                    <h2 id="current-week">Week of December 25, 2024</h2>
+                    <button id="next-week" class="action-btn">Next Week</button>
+                </div>
+
+                <div class="weekly-schedule">
+                    <div class="time-column">
+                        <div class="time-slot">09:00 AM</div>
+                        <div class="time-slot">10:00 AM</div>
+                        <div class="time-slot">11:00 AM</div>
+                        <div class="time-slot">12:00 PM</div>
+                        <div class="time-slot">01:00 PM</div>
+                        <div class="time-slot">02:00 PM</div>
+                        <div class="time-slot">03:00 PM</div>
+                        <div class="time-slot">04:00 PM</div>
+                    </div>
+                    <div class="schedule-grid" id="schedule-grid">
+                        <!-- Schedule content will be populated by JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <section class="quick-actions">
+                <h2>Quick Actions</h2>
+                <div class="actions-grid">
+                    <button id="add-class" class="action-btn">Add Class</button>
+                    <button id="export-schedule" class="action-btn">Export Schedule</button>
+                    <button id="set-reminder" class="action-btn">Set Reminder</button>
+                    <button id="view-calendar" class="action-btn">View Calendar</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div id="class-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Add New Class</h2>
+            <form id="class-form">
+                <div class="form-group">
+                    <label for="class-name">Class Name</label>
+                    <input type="text" id="class-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="class-day">Day</label>
+                    <select id="class-day" required>
+                        <option value="monday">Monday</option>
+                        <option value="tuesday">Tuesday</option>
+                        <option value="wednesday">Wednesday</option>
+                        <option value="thursday">Thursday</option>
+                        <option value="friday">Friday</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="start-time">Start Time</label>
+                    <input type="time" id="start-time" required>
+                </div>
+                <div class="form-group">
+                    <label for="end-time">End Time</label>
+                    <input type="time" id="end-time" required>
+                </div>
+                <div class="form-group">
+                    <label for="room">Room</label>
+                    <input type="text" id="room">
+                </div>
+                <button type="submit" class="submit-btn">Add Class</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Student Portal. All rights reserved.</p>
+    </footer>
+
+    <script src="schedule.js"></script>
+    <script type="module" src="main.js"></script>
+    <script type="module" src="assignments.js"></script>
+</body>
+</html>

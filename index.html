@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">Student Portal</div>
+        <button class="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li><a href="assignments.html">Assignments</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <h1>Welcome to Your Student Portal</h1>
+            <p>Manage your assignments and schedule efficiently</p>
+        </section>
+
+        <section class="dashboard">
+            <div class="card">
+                <h2>Upcoming Assignments</h2>
+                <div id="upcoming-assignments">
+                    <div class="assignment-item">
+                        <h3>Mathematics</h3>
+                        <p>Due: Tomorrow</p>
+                        <span class="badge urgent">Urgent</span>
+                    </div>
+                    <div class="assignment-item">
+                        <h3>Physics</h3>
+                        <p>Due: Next Week</p>
+                        <span class="badge">Pending</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Today's Schedule</h2>
+                <div id="today-schedule">
+                    <!-- Schedule items will be dynamically inserted here -->
+                </div>
+            </div>
+        </section>
+
+        <section class="quick-actions">
+            <h2>Quick Actions</h2>
+            <div class="actions-grid">
+                <button id="add-assignment" class="action-btn">Add Assignment</button>
+                <button id="view-schedule" class="action-btn">View Schedule</button>
+                <button id="submit-work" class="action-btn">Submit Work</button>
+                <button id="contact-support" class="action-btn">Contact Support</button>
+            </div>
+        </section>
+    </main>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Add New Assignment</h2>
+            <form id="assignment-form">
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="due-date">Due Date</label>
+                    <input type="date" id="due-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Add Assignment</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Student Portal. All rights reserved.</p>
+    </footer>
+
+    <script src="main.js"></script>
+    <script type="module" src="main.js"></script>
+    <script type="module" src="assignments.js"></script>
+</body>
+</html>
